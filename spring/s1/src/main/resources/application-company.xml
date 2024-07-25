@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="mac" class="com.lyt.entity.Computer">
+        <constructor-arg name="brand" value="mac" />
+        <constructor-arg name="type" value="笔记本" />
+        <constructor-arg name="sn" value="1" />
+        <constructor-arg name="price" value="9999" />
+    </bean>
+    <bean id="window" class="com.lyt.entity.Computer">
+        <constructor-arg name="brand" value="window" />
+        <constructor-arg name="type" value="台式" />
+        <constructor-arg name="sn" value="2" />
+        <constructor-arg name="price" value="2999" />
+    </bean>
+    <bean id="c1" class="com.lyt.entity.Company">
+        <property name="rooms">
+            <set>
+                <value>001</value>
+                <value>002</value>
+            </set>
+        </property>
+        <property name="computers">
+            <map>
+                <entry key="0" value-ref="mac"></entry>
+                <entry key="1" value-ref="window"></entry>
+                <entry key="2">
+                    <bean class="com.lyt.entity.Computer">
+                        <constructor-arg name="brand" value="ipad" />
+                        <constructor-arg name="type" value="移动端" />
+                        <constructor-arg name="sn" value="3" />
+                        <constructor-arg name="price" value="5999" />
+                    </bean>
+                </entry>
+            </map>
+        </property>
+        <property name="info">
+            <props>
+                <prop key="phone">010-12345678</prop>
+                <prop key="address">北京市朝阳区XX路XX大厦</prop>
+                <prop key="website">http://www.xxx.com</prop>
+            </props>
+        </property>
+    </bean>
+    <bean class="com.lyt.entity.Computer">
+        <constructor-arg name="brand" value="微星"/>
+        <constructor-arg name="type" value="台式机"/>
+        <constructor-arg name="sn" value="8389280012"/>
+        <constructor-arg name="price" value="3000"/>
+    </bean>
+
+    <bean class="com.lyt.entity.Computer">
+        <constructor-arg name="brand" value="华硕"/>
+        <constructor-arg name="type" value="笔记本"/>
+        <constructor-arg name="sn" value="9089380012"/>
+        <constructor-arg name="price" value="6000"/>
+    </bean>
+</beans>

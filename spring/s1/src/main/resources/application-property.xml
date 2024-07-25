@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- more bean definitions go here -->
+    <bean id="sweetApple" class="com.lyt.entity.Apple">
+        <!-- collaborators and configuration for this bean go here -->
+        <property name="title" value="红富士"></property>
+        <property name="origin" value="欧洲"></property>
+        <property name="color" value="红色"></property>
+    </bean>
+
+    <bean id="sourApple" class="com.lyt.entity.Apple">
+        <property name="title" value="青苹果"></property>
+        <property name="origin" value="中亚"></property>
+        <property name="color" value="绿色"></property>
+    </bean>
+
+    <bean id="rdApple" class="com.lyt.entity.Apple">
+        <property name="title" value="蛇果"></property>
+        <property name="origin" value="美国"></property>
+        <property name="color" value="红色"></property>
+    </bean>
+
+    <bean id="andy" class="com.lyt.entity.Child">
+        <property name="name" value="安迪"/>
+        <property name="apple" ref="rdApple"/>
+    </bean>
+
+    <bean id="luna" class="com.lyt.entity.Child">
+        <property name="name" value="露娜"/>
+        <property name="apple" ref="sweetApple"/>
+    </bean>
+</beans>

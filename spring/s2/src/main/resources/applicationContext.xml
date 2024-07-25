@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+    <!-- more bean definitions go here -->
+    <bean id="sweetApple" class="com.s2.entity.Apple">
+        <!-- collaborators and configuration for this bean go here -->
+        <property name="title" value="红富士"></property>
+        <property name="origin" value="欧洲"></property>
+        <property name="color" value="红色"></property>
+    </bean>
+</beans>

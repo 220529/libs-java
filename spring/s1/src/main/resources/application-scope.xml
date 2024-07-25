@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="subject" class="com.lyt.entity.Subject">
+        <property name="name" value="语文"/>
+    </bean>
+
+    <bean id="student" class="com.lyt.entity.Student" scope="prototype">
+        <property name="subject" ref="subject" />
+    </bean>
+
+    <bean id="cycle" class="com.lyt.entity.Cycle" init-method="init2" destroy-method="destroy">
+        <property name="x" value="1" />
+        <property name="y" value="2" />
+    </bean>
+</beans>

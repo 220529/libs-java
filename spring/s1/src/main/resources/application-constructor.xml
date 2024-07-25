@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    构造方法注入对象-->
+    <bean id="softApple" class="com.lyt.entity.Apple">
+        <constructor-arg name="title" value="金帅" />
+        <constructor-arg name="origin" value="中国" />
+        <constructor-arg name="color" value="黄色" />
+    </bean>
+    <bean id="lily" class="com.lyt.entity.Child">
+        <property name="name" value="莉莉"/>
+        <property name="apple" ref="softApple"/>
+    </bean>
+</beans>
