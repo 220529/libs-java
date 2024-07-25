@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!-- goods_id ==> goodsId 驼峰命名转换 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="com.mybatis.datasource.C3P0DataSourceFactory">
+                <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/babytun"/>
+                <property name="user" value="root"/>
+                <property name="password" value="root"/>
+                <!-- 其他 C3P0 配置属性 -->
+                <property name="maxPoolSize" value="20"/>
+                <property name="minPoolSize" value="5"/>
+                <property name="initialPoolSize" value="10"/>
+                <property name="maxIdleTime" value="300"/>
+                <property name="acquireIncrement" value="5"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mappers/goods.xml" />
+    </mappers>
+</configuration>
