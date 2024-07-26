@@ -1,0 +1,26 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+<!--    DispatcherServlet用于拦截Http请求-->
+    <servlet-name>springmvc</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+      <init-param>
+          <param-name>contextConfigLocation</param-name>
+          <param-value>classpath:applicationContext.xml</param-value>
+      </init-param>
+    <!--
+        在Web应用启动时自动创建Spring IOC容器,
+        并初始化DispatcherServlet
+    -->
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>springmvc</servlet-name>
+<!--    代表拦截所有请求-->
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+</web-app>
